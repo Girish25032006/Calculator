@@ -42,6 +42,27 @@
   .button{
     color: rgb(0, 21, 255);
     background-color: rgb(174, 255, 93);
+    align-items: center;
+    
+    
+  }
+  .button1{
+    color: rgb(0, 21, 255);
+    background-color: rgb(174, 255, 93);
+    
+    
+  }
+  
+  .button2{
+    height: 15px;
+    width: 30px;
+    margin-top: 4px;
+    
+  }
+  .cancel_btn{
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
   }
   .buttoncolor{
     color:white;
@@ -76,10 +97,11 @@
         <button  onclick="calculate('.');">.</button>
         <button  onclick="calculate('/');" class="button">/</button>
       </div>
-      <div>
+      <div class="cancel_btn">
         <button onclick="clearbutton();" class="button">AC</button>
         <button onclick="calculate('%');" class="button">%</button>
         <button onclick="answer('=');" class="buttoncolor">=</button>
+        <button onclick="cancel('x')" class="button1"><img src="cancel.png" class="button2"></button>
       </div>
     </div>
   </div>
@@ -99,7 +121,9 @@
     function clearbutton(){
       input.value='';
     }
-    
+    function cancel(value){
+      input.value=input.value.slice(0,-1);
+    }
   </script>
   
 </body>
