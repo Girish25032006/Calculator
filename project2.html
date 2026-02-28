@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age_Calculator</title>
+</head>
+<style>
+  body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    font-size: 40px;
+    background-color: rgb(174, 255, 93);
+    font-family: sans-serif;
+  }
+  .wholediv{
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 60px;
+    background-color: rgb(7, 245, 237);
+  }
+  .input{
+    height: 40px;
+    width: 320px;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: rgb(174, 255, 93);
+  }
+  .comment{
+    margin-bottom: 4px;
+    font-family: sans-serif;
+  }
+  .calbtn{
+    height: 40px;
+    width: 200px;
+    font-size: 30px;
+    border-radius: 8px;
+    border: 2px solid black;
+    background-color: rgb(174, 255, 93);
+    
+  }
+</style>
+
+<body>
+  <h1 >Age Calculator</h1>
+  <div class="wholediv">
+    <h3 class="comment">Enter Your Date Of Birth</h3>
+    <input type="date" class="input">
+    <button onclick="agecalculator();" class="calbtn">Calculate</button>
+    <p class="result"></p>
+  </div>
+  <script>
+    function agecalculator(){
+      let input = document.querySelector('.input').value;
+      let birthdate=new Date(input)
+      let today=new Date()
+      let age = Number(today.getFullYear()-birthdate.getFullYear());
+      if(age <0){
+        document.querySelector('.result').innerHTML=`Let See In The Future`;
+      }
+      
+      else if(age>=0 && age<=18){
+        document.querySelector('.result').innerHTML=`Your Age Is ${age} Not An Adult`;
+      }
+      else if(age>18){
+        document.querySelector('.result').innerHTML=`Your Age Is ${age} Yes,Your  Adult`;
+      }
+    }
+
+  </script>
+</body>
+</html>
