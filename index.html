@@ -4,81 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-<style>
-  .wholediv{
-    padding: 30px;
-    border-radius: 6px;
-    border: 1px solid black;
-    background-color: #2c2c3e;
-  }
-  body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    min-height: 100vh;
-    background-color:#1e1e2f;
-    
-  }
-  .maindiv button{
-    margin-top: 6px;
-    height: 25px;
-    width: 60px;
-    margin-right: 4px;
-    border-radius: 4px;
-    border: none;
-    font-size: 18px;
-    
-  }
-  .maindiv input{
-    height: 30px;
-    width: 250px;
-    border: 2px solid #8e44ad;
-    background-color: #f5f6fa;
-    color: #2f3640;
-    border-radius: 12px;
-    font-size: 20px;
-    padding-right: 10px;
-    text-align: right;
-  }
-  .maindiv input::placeholder{
-    margin-left: 10px;
-  }
-  .button{
-    color: black;
-    background-color: #ff9f43;
-    align-items: center;
-    
-    
-  }
-  .operator_btn{
-    background-color: #3a3a5a;
-    color: white;
-  }
-  .button1{
-  color: black;
-  background-color: #ff9f43;
-    
-    
-  }
-  
-  .button2{
-    height: 15px;
-    width: 30px;
-    margin-top: 4px;
-    
-  }
-  .cancel_btn{
-    display: flex;
-    flex-direction: row;
-    column-gap: 4px;
-  }
-  .buttoncolor{
-    background-color:#00d2d3;
-    color: black;
-  }
-</style>
 <body>
   <div class="wholediv">
     <div class="maindiv">
@@ -115,25 +43,8 @@
       </div>
     </div>
   </div>
-  <script>
-    let input=document.querySelector('.input');
-    function calculate(value){
-      input.value=input.value+value;
-    }
-    function answer(){
-      try{
-        input.value=eval(input.value);
-      }
-      catch(error){
-        input.value='ERROR'
-      }
-    }
-    function clearbutton(){
-      input.value='';
-    }
-    function cancel(value){
-      input.value=input.value.slice(0,-1);
-    }
+  <script src="index.js">
+    
   </script>
   
 </body>
